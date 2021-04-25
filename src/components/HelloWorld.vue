@@ -32,6 +32,10 @@ export default {
   },
   created() {
     console.log(this.age);
+    // this.sleepTest01();
+    // this.sleepTest02();
+    // this.blockMainThreadaTest();
+  },
   },
   methods: {
     urlTest() {
@@ -43,6 +47,30 @@ export default {
         url: '/home/data',
         params
       })
+    },
+    sleepTest01() {
+      console.log("sleep01---------start");
+      // 不会影响方法内部后续的执行
+      util.sleep(5000).then(()=> {
+
+      });
+      console.log("sleep01---------end");
+    },
+    async sleepTest02() {
+      console.log("sleep02---------start");
+      // 阻塞所在方法内部后续的执行，then执行完才会执行后续
+      await util.sleep(3000).then(()=> {
+        for(let i=0; i < 3000; i++) {
+          console.log("sleep02---------");
+        }
+      });
+      console.log("sleep02---------end");
+    },
+    blockMainThreadaTest() {
+      console.log("block---------start");
+      // 阻塞主线程
+      util.blockMainThread(5000);
+      console.log("block---------end");
     }
   }
 }
