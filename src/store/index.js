@@ -21,7 +21,7 @@ files.keys().map(key => {
 
 const store = new Vuex.Store({
   state: {
-    naem: "hang"
+    name: "hang"
   },
   mutations: {
 

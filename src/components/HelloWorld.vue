@@ -36,7 +36,6 @@ export default {
     // this.sleepTest02();
     // this.blockMainThreadaTest();
   },
-  },
   methods: {
     urlTest() {
       let params = {
