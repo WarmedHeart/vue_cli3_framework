@@ -9,10 +9,6 @@
 </template>
 
 <style>
-/* 全局公共样式 */
-@import "./styles/base.css";
-/* 全局阿里图标库 */
-@import "./assets/icon_fonts/iconfont.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
