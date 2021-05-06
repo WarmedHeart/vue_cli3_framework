@@ -15,6 +15,8 @@
    ```
 
 3. 执行过程：安装babel、router、vuex
+   3.1 其中的core-js依赖附带所有 JavaScript 不同版本中标准库的实现，之后想了解es的实现可以参考。
+   3.2 参考文档：   [MDN中文文档](https://developer.mozilla.org/zh-CN/docs/Web)   [MDN英文文档](https://developer.mozilla.org/en-US/docs/Web)  [cdn引入](https://cdnjs.com/libraries?q=vue)  [es6新特性](https://www.yuque.com/ostwind/es6/readme)  [浏览器兼容性检测](https://caniuse.com/)
 
    <img src="C:\Users\25681\AppData\Roaming\Typora\typora-user-images\image-20210408164147735.png" alt="image-20210408164147735" style="zoom:80%;margin-left: 20px" />
 
@@ -41,5 +43,7 @@
    ```
 
 8. 引入全局css、阿里图标库、公共方法。
+
 9. 引入element
+
 10. 引入ant-design
