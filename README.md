@@ -24,7 +24,7 @@
 
 6. 安装axios，配置request请求方法。
 
-7. 安装lib-flexible，在main.js中引入，缩放浏览器html中的font-size一直是54px；修改flexible.js中的代码（源代码只考虑了移动端适配），已达到web端自适应。没有使用 px2remLoader插件进行px自动转rem（当使用第三方css也会进行转换），通过vscode安装插件cssrem自定义哪些需要转rem。
+7. 安装lib-flexible，在main.js中引入，缩放浏览器html中的font-size一直是54px；修改flexible.js中的代码（源代码只考虑了移动端适配），已达到web端自适应。没有使用 px2remLoader插件进行px自动转rem（使用时第三方css也会进行转换），通过vscode安装插件cssrem自定义哪些需要转rem。
 
    ```javascript
    function refreshRem(){
