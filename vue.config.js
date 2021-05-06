@@ -15,7 +15,6 @@ module.exports = {
   },
   publicPath: "./",
   outputDir: "dist",
-  lintOnSave: false, //是否开启格式检查
   // 代理配置参考链接：https://webpack.docschina.org/configuration/
   devServer: {
     port: 8888,
