@@ -16,20 +16,28 @@ export default {
   },
   //克隆对象(深拷贝)
   cloneObj(myObj) {
-    if (typeof myObj != "object") {
-      return myObj;
-    }
-    if (myObj == null) {
-      return myObj;
-    }
-    let myNewObj;
-    if (Object.prototype.toString.call(myObj) == "[object Array]") {
-      myNewObj = new Array();
-    } else {
-      myNewObj = new Object();
-    }
-    for (var i in myObj) {
-      myNewObj[i] = this.cloneObj(myObj[i]);
+    // 对null、非Object、Date、RegExp进行特殊处理
+    if (myObj === null) return null;
+    if (typeof myObj !== "object") return myObj;
+    if (a instanceof Date) return new Date(obj);
+    if (a instanceof RegExp) return new RegExp(obj);
+
+    let myNewObj = new myObj.constructor(); // 保证原型链的构造方法（经过以上过滤只剩：Object、Array）
+    /* 
+      等效于:
+      let myNewObj;
+      if (Object.prototype.toString.call(myObj) == "[object Array]") {
+        myNewObj = new Array();
+      } else if (Object.prototype.toString.call(myObj) == "[object Object]"){
+        myNewObj = new Object();
+      } 
+    */
+    for (var key in myObj) {
+      if (myObj.hasOwnProperty(key)) {   //不遍历其原型链上的属性
+        var val = myObj[key];
+        myNewObj[key] = typeof val === 'object' ? arguments.callee(val) : val; // 使用arguments.callee解除与函数名的耦合
+        // myNewObj[key] = this.cloneObj(myObj[key]);
+      }
     }
     return myNewObj;
   }
