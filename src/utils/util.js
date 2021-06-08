@@ -16,11 +16,11 @@ export default {
   },
   //克隆对象(深拷贝)
   cloneObj(myObj) {
-    // 对null、非Object、Date、RegExp进行特殊处理
-    if (myObj === null) return null;
+    // 对非Object(number、string、boolean、undefined、function)、Object特例(null、Date、RegExp)进行特殊处理
     if (typeof myObj !== "object") return myObj;
-    if (a instanceof Date) return new Date(obj);
-    if (a instanceof RegExp) return new RegExp(obj);
+    if (myObj === null) return null;
+    if (myObj instanceof Date) return new Date(myObj);
+    if (myObj instanceof RegExp) return new RegExp(myObj);
 
     let myNewObj = new myObj.constructor(); // 保证原型链的构造方法（经过以上过滤只剩：Object、Array）
     /* 
