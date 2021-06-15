@@ -18,7 +18,7 @@
    3.1 其中的core-js依赖附带所有 JavaScript 不同版本中标准库的实现，之后想了解es的实现可以参考。
    3.2 参考文档：   [MDN中文文档](https://developer.mozilla.org/zh-CN/docs/Web)   [MDN英文文档](https://developer.mozilla.org/en-US/docs/Web)  [cdn引入](https://cdnjs.com/libraries?q=vue)  [es6新特性](https://www.yuque.com/ostwind/es6/readme)  [浏览器兼容性检测](https://caniuse.com/)
 
-   <img src="C:\Users\25681\AppData\Roaming\Typora\typora-user-images\image-20210408164147735.png" alt="image-20210408164147735" style="zoom:80%;margin-left: 20px" />
+   <img src="https://github.com/WarmedHeart/my-pic/blob/master/VueCli3Framework/image-20210408164147735.png" alt="image-20210408164147735" style="zoom:80%;margin-left: 20px" />
 
 4. 创建webpack的配置文件vue.config.js，并新增配置（主要别名和代理）
 
