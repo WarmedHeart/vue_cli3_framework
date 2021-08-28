@@ -35,8 +35,8 @@ export default {
     for (var key in myObj) {
       if (myObj.hasOwnProperty(key)) {   //不遍历其原型链上的属性
         var val = myObj[key];
-        myNewObj[key] = typeof val === 'object' ? arguments.callee(val) : val; // 使用arguments.callee解除与函数名的耦合
-        // myNewObj[key] = this.cloneObj(myObj[key]);
+        // myNewObj[key] = typeof val === 'object' ? arguments.callee(val) : val; // 使用arguments.callee解除与函数名的耦合（vue-cli通过babel将代码转成es5语法时，默认使用的严格模式，严格模式下不能使用callee）
+        myNewObj[key] = typeof val === 'object' ? this.cloneObj(val) : val;
       }
     }
     return myNewObj;
