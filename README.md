@@ -46,4 +46,4 @@
 
 9. 引入element
 
-10. 引入ant-design
+10. 引入npm install --save-dev node-sass sass-loader（有时使用sass报错，将node_module删除重新 npm install）,并配置全局sass变量 variable.scss

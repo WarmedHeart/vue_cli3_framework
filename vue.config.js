@@ -13,6 +13,13 @@ module.exports = {
       }
     }
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "~@/styles/variable.scss";`
+      }
+    }
+  },
   publicPath: "./",
   outputDir: "dist",
   // 代理配置参考链接：https://webpack.docschina.org/configuration/
