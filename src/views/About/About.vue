@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import SelfRegisterComp from "components/SelfRegisterComp.vue";
-import ElementTest from "components/ElementTest.vue";
-// import AntDesignTest from "components/AntDesignTest.vue";
+import SelfRegisterComp from "components/test/SelfRegisterComp.vue";
+import ElementTest from "components/test/ElementTest.vue";
+// import AntDesignTest from "components/test/AntDesignTest.vue";
 import aboutStoreObj from "./store.js";
 const MUDULE_NAME = "aboutStore";
 
