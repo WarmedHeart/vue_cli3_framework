@@ -3,22 +3,22 @@
   <div>
     <self-register-comp />
     <element-test />
-    <ant-design-test />
+    <!-- <ant-design-test /> -->
   </div>
 </template>
 
 <script>
 import SelfRegisterComp from "components/SelfRegisterComp.vue";
 import ElementTest from "components/ElementTest.vue";
-import AntDesignTest from "components/AntDesignTest.vue";
+// import AntDesignTest from "components/AntDesignTest.vue";
 import aboutStoreObj from "./store.js";
 const MUDULE_NAME = "aboutStore";
 
 export default {
   components: {
     SelfRegisterComp,
-    ElementTest,
-    AntDesignTest
+    ElementTest
+    // AntDesignTest
   },
   beforeCreate() {
     //注册模块
