@@ -16,7 +16,7 @@ const routes = files.keys().map(key => {
 const defaultDirectect = {
   show: false,
   clickable: false,
-  menu: false,
+  menu: "",
   title: "Hang-Vue3脚手架",
   path: "/",
   redirect: "/home/hot",

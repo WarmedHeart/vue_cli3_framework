@@ -4,7 +4,7 @@ import AppMainTop from "components/AppMain/AppMainTop";
 
 export default {
   render(createElement) {
-    let menuData = this.$router.options.routes.slice(1);
+    let menuData = this.$router.options.routes;
     return createElement(
       this.navPosition === 'left' ? AppMainLeft : AppMainTop,
       {

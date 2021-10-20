@@ -13,13 +13,13 @@ export default [
     children: [
       {
         title: "我的",
-        path: "/me",
+        path: "me",
         name: "me",
         component: About,
         children: [],
         menu: "el-icon-s-tools",
         show: true,
-        disabled: true
+        disabled: false
       }
     ]
   }

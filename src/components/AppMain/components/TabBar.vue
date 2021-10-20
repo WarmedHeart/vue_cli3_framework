@@ -6,7 +6,8 @@
       3. 路由是从各个文件夹router.js读取的，没有顺序
   -->
   <div>
-   <el-menu
+    <el-menu
+      :default-active="defaultSelectBarIndex"
       text-color="#8b8691"
       background-color="transparent">
       <el-submenu
@@ -60,23 +61,56 @@ export default {
       default: () => []
     }
   },
-  created() {
-    console.log(this.iteratorFilterItems(this.menuData));
-  },
+  created() {},
   data() {
     return {};
   },
   computed: {
     showItemList() {
       return this.iteratorFilterItems(this.menuData);
+    },
+    defaultSelectBarIndex() {
+      let redirectPath =  this.menuData[0].redirect;
+      return this.iteratorFindIndexByPath(this.showItemList, redirectPath);
     }
   },
   methods: {
+    /**
+     * 触发父组件跳转router
+     */
     tabBarClick(item) {
       if(item.disabled) {
         return;
       }
       this.$emit("jumpToRoute", item)
+    },
+    /**
+     * 通过redirect路径找到默认显示的index
+     */
+    iteratorFindIndexByPath(itemList, path) {
+      path = this.removeIncludeStr(path, "/", "prefix");
+      for (let index = 0, len = itemList.length; index < len; index++) {
+        let item = itemList[index];
+        let tempPath = this.removeIncludeStr(item.path, "/", "prefix");
+        if (path.startsWith(tempPath)) {
+          path = this.removeIncludeStr(path.substring(tempPath.length), "/", "prefix");
+          return index + (path === "" ? "" : "-" + this.iteratorFindIndexByPath(item.children, path));
+        }
+      }
+      return "defaultPath";
+    },
+    removeIncludeStr(originStr, filterStr, flag) {
+      let oLen = originStr.length;
+      let fLen = filterStr.length;
+      switch(flag) {
+        case "prefix":
+          return originStr.startsWith(filterStr) ? originStr.substring(fLen) : originStr;
+        case "suffix":
+          return originStr.endsWith(filterStr) ? originStr.substring(0, oLen - fLen): originStr;
+        case "all":
+          return originStr.replaceAll(filterStr, "");
+      }
+      return originStr;
     },
     /**
      * 通过route属性show控制是否显示
