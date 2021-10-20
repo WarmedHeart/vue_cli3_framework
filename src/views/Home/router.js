@@ -13,7 +13,7 @@ export default [
     children: [
       {
         title: "热门",
-        path: "/hot",
+        path: "hot",
         name: "hot",
         component: Home,
         menu: "el-icon-eleme",

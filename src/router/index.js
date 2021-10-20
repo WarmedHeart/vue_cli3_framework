@@ -19,7 +19,7 @@ const defaultDirectect = {
   menu: false,
   title: "Hang-Vue3脚手架",
   path: "/",
-  // redirect: "/about",
+  redirect: "/home/hot",
   children: []
 };
 routes.unshift(defaultDirectect);
