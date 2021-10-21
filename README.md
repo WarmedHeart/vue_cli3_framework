@@ -52,7 +52,7 @@
    ```
 11. [引入eslent]: https://cli.vuejs.org/zh/config/#eslint	" "
 
-    增加.prettierrc.js文件写入规则不在对象最后一个属性加逗号 `"trailingComma": "none"`，其他规则等后续写代码出现不适应的情况再解决。
+    增加.prettierrc.js文件写入规则不在对象最后一个属性加逗号 `"trailingComma": "none"`，其他规则等后续写代码出现不适应的情况再解决。【vscode记得添加eslint插件帮助提示】
    ```bash
 vue add @vue/eslint  // 选择prettier 和 Lint on save
    ```
