@@ -1,4 +1,4 @@
-import {GET_NAME} from"./type.js"
+import { GET_NAME } from "./type.js";
 
 export default {
   moduleName: "homeStore",
@@ -6,13 +6,11 @@ export default {
   state: {
     age: 100
   },
-  mutations: {
-  },
-  actions: {
-  },
+  mutations: {},
+  actions: {},
   getters: {
-    [GET_NAME](state){
+    [GET_NAME](state) {
       return state.age;
     }
   }
-}
+};

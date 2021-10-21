@@ -6,11 +6,11 @@ export default {
   render(createElement) {
     let menuData = this.$router.options.routes;
     return createElement(
-      this.navPosition === 'left' ? AppMainLeft : AppMainTop,
+      this.navPosition === "left" ? AppMainLeft : AppMainTop,
       {
-        props:{ menuData }
-      } 
-    )
+        props: { menuData }
+      }
+    );
   },
   components: {
     AppMainLeft,
@@ -21,6 +21,6 @@ export default {
       type: String,
       default: "left"
     }
-  },
+  }
 };
 </script>

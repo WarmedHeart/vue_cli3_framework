@@ -37,7 +37,7 @@ export default {
     jumpToRoute(route) {
       this.$router.push({
         name: route.name
-      })
+      });
     }
   }
 };
@@ -55,14 +55,18 @@ $selectTabBar: 36px;
   right: 0px;
   bottom: 0px;
   background-color: $background-color;
-  overflow:hidden
+  overflow: hidden;
 }
 .header {
   width: 100%;
   height: $headerHeight;
   background-color: #1fc8db;
   background-image: linear-gradient(
-    120deg,#9fb8ad 0%,#1fc8db 51%,#2cb5e8 75%);
+    120deg,
+    #9fb8ad 0%,
+    #1fc8db 51%,
+    #2cb5e8 75%
+  );
 }
 .main {
   width: 100%;

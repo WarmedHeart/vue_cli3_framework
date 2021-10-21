@@ -46,4 +46,13 @@
 
 9. 引入element
 
-10. 引入npm install --save-dev node-sass sass-loader（有时使用sass报错，将node_module删除重新 npm install）,并配置全局sass变量 variable.scss
+10. 引入sass（有时使用sass报错，将node_module删除重新 npm install）,并配置全局sass变量 variable.scss
+   ```bash
+      npm install --save-dev node-sass sass-loader
+   ```
+11. [引入eslent]: https://cli.vuejs.org/zh/config/#eslint	" "
+
+    增加.prettierrc.js文件写入规则不在对象最后一个属性加逗号 `"trailingComma": "none"`，其他规则等后续写代码出现不适应的情况再解决。
+   ```bash
+vue add @vue/eslint  // 选择prettier 和 Lint on save
+   ```

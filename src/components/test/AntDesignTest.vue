@@ -1,15 +1,11 @@
 <template>
   <div class="main-wrapper">
-    <a-button type="primary">
-      Primary
-    </a-button>
+    <a-button type="primary"> Primary </a-button>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>

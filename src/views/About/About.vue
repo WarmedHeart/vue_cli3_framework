@@ -25,10 +25,8 @@ export default {
     if (!this.$store.hasModule(MUDULE_NAME)) {
       this.$store.registerModule(MUDULE_NAME, aboutStoreObj);
     }
-  },
-}
+  }
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -43,6 +43,6 @@ module.exports = {
         }
       }
     }
-  }
+  },
+  lintOnSave: true
 };
-

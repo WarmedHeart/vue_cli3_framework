@@ -2,13 +2,14 @@ export default {
   /* 延迟函数 （外层函数套有async/await会有阻塞方法内部后续执行的效果）*/
   sleep(delayTime) {
     return new Promise((resolve) => {
-      setTimeout(resolve, delayTime)
+      setTimeout(resolve, delayTime);
     });
   },
   /* 阻塞主线程（js属于单线程） */
   blockMainThread(delayTime) {
     let startTime = new Date().getTime();
-    while((new Date().getTime() - startTime) < delayTime) {}
+    // eslint-disable-next-line no-empty
+    while (new Date().getTime() - startTime < delayTime) {}
   },
   //克隆对象(浅拷贝)
   clone(obj) {
@@ -33,12 +34,13 @@ export default {
       } 
     */
     for (var key in myObj) {
-      if (myObj.hasOwnProperty(key)) {   //不遍历其原型链上的属性
+      if (Object.protptype.hasOwnProperty.call(myObj, key)) {
+        //不遍历其原型链上的属性
         var val = myObj[key];
         // myNewObj[key] = typeof val === 'object' ? arguments.callee(val) : val; // 使用arguments.callee解除与函数名的耦合（vue-cli通过babel将代码转成es5语法时，默认使用的严格模式，严格模式下不能使用callee）
-        myNewObj[key] = typeof val === 'object' ? this.cloneObj(val) : val;
+        myNewObj[key] = typeof val === "object" ? this.cloneObj(val) : val;
       }
     }
     return myNewObj;
   }
-}
+};
