@@ -7,7 +7,9 @@
   -->
   <div>
     <el-menu
+      class="el-menu-vertical"
       :default-active="defaultSelectBarIndex"
+      :collapse="value"
       background-color="transparent"
     >
       <el-submenu
@@ -56,6 +58,10 @@
 <script>
 export default {
   props: {
+    value: {
+      type: Boolean,
+      default: false
+    },
     menuData: {
       type: Array,
       default: () => []
@@ -160,38 +166,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-::v-deep .el-menu .el-submenu__title {
-  padding-right: 45px;
-}
-::v-deep .el-submenu.is-disabled .el-submenu__title,
-::v-deep .el-menu-item.is-disabled {
-  opacity: 0.6 !important;
-  &:hover {
-    background-color: #e0dfdf !important;
-    color: #b4b8c7 !important;
-    i {
-      color: #b4b8c7 !important;
-    }
-  }
-}
-::v-deep .el-submenu {
-  .el-submenu__title {
-    &:hover {
-      background-color: rgba(0, 111, 106, 0.6) !important;
-      color: #ffffff !important;
-      i {
-        color: #ffffff !important;
-      }
-    }
-  }
-}
-::v-deep .el-menu-item {
-  &:hover {
-    background-color: rgba(0, 111, 106, 0.2) !important;
-    color: #009d85 !important;
-    i {
-      color: #009d85 !important;
-    }
-  }
+.el-menu-vertical:not(.el-menu--collapse) {
+  width: 200px;
 }
 </style>

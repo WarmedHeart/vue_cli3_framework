@@ -3,11 +3,16 @@
     <div class="header"></div>
     <div class="main">
       <div class="sider">
-        <tab-bar :menuData="menuData" @jumpToRoute="jumpToRoute"></tab-bar>
+        <tab-bar
+          :menuData="menuData"
+          @jumpToRoute="jumpToRoute"
+          v-model="isCollapse"
+        ></tab-bar>
       </div>
       <div class="content">
         <!-- <div class="select-tab-bar"></div> -->
         <div class="content-main">
+          <button @click="isCollapse = !isCollapse">展开/收缩</button>
           <keep-alive>
             <router-view></router-view>
           </keep-alive>
@@ -31,7 +36,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      isCollapse: false
+    };
   },
   methods: {
     jumpToRoute(route) {
@@ -45,7 +52,6 @@ export default {
 
 <style lang="scss" scoped>
 $headerHeight: 60px;
-$siderWidth: 240px;
 $selectTabBar: 36px;
 
 .app-wrapper {
@@ -71,18 +77,19 @@ $selectTabBar: 36px;
 .main {
   width: 100%;
   height: calc(100% - 60px);
+  display: flex;
   .sider {
-    width: $siderWidth;
     height: 100%;
     float: left;
     background-color: $background-color;
     border: 1px solid #dadfe6;
     padding: 6px 0;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .content {
-    width: calc(100% - $siderWidth);
     height: 100%;
+    flex: 1;
     float: left;
     .select-tab-bar {
       height: $selectTabBar;
