@@ -8,7 +8,6 @@
   <div>
     <el-menu
       :default-active="defaultSelectBarIndex"
-      text-color="#8b8691"
       background-color="transparent"
     >
       <el-submenu
